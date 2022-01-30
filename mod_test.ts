@@ -6,7 +6,7 @@ import {
   assertStrictEquals,
   assertStringIncludes,
 } from "https://deno.land/std@0.123.0/testing/asserts.ts";
-import { Issue13142TextDecoderStream } from "./mod.ts";
+import { Issue13142TextDecoderStream, VERSION } from "./mod.ts";
 import {
   chunks,
   escapeRegExp,
@@ -25,6 +25,8 @@ await Deno.permissions.request({ name: "read", path: testDir });
 const runXFailTests =
   (await Deno.permissions.query({ name: "env", variable: "RUN_XFAIL_TESTS" }))
       .state === "granted" && Deno.env.get("RUN_XFAIL_TESTS") === "true";
+
+Deno.test("VERSION", () => assertStrictEquals(VERSION, "1.0.0"));
 
 Deno.test("options: defaults", () => {
   const actual = new Issue13142TextDecoderStream();

@@ -1,6 +1,8 @@
 // Copyright 2022 issue_13142_text_decoder_stream contributors. All rights reserved. MIT license.
 import { ShutdownAwareTransformStream } from "https://deno.land/x/shutdown_aware_transform_stream@1.0.0/mod.ts";
 
+export const VERSION = "1.0.0";
+
 /** Identical to [`TextDecoderStream`], but without the [denoland/deno#13142] bug.
  *
  * [`TextDecoderStream`]: https://developer.mozilla.org/en-US/docs/Web/API/TextDecoderStream
