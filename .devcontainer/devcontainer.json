@@ -9,10 +9,6 @@
     "args": { "VARIANT": "bullseye" }
   },
 
-  "containerEnv": {
-    "DOTFILES_GIT_REF": "fish-editor-envar"
-  },
-
   // Add the IDs of extensions you want installed when the container is created.
   "extensions": ["denoland.vscode-deno", "editorconfig.editorconfig"],
 
